@@ -32,6 +32,16 @@ def registers_new_restaurant():
     print(f"Restaurant {restaurant_name} successfully registered!")
     return_to_the_main_menu()
 
+def list_of_registered_restaurants():
+    shows_subtitles("List of registered restaurants: ")
+    print(f"{"Restaurant Name".ljust(19)} {"Category".ljust(18)} {"State"}")
+    for restaurant in restaurant_lists:
+        restaurant_name = restaurant["name"]
+        restaurant_category = restaurant["category"]
+        restaurant_state = "activated" if restaurant["state"] == True else "disabled"
+        print(f"- {restaurant_name.ljust(16)} | {restaurant_category.ljust(16)} | {restaurant_state}")
+    return_to_the_main_menu()
+
 def finish_app():
     shows_subtitles("Program finished with successfully!")
 
@@ -42,7 +52,7 @@ def choosen_option():
             case 1:
                 registers_new_restaurant()
             case 2:
-                print("List the registered restaurants!")
+                list_of_registered_restaurants()
             case 3:
                 print("Shows the status of the restaurant!")
             case 4:
@@ -50,7 +60,7 @@ def choosen_option():
             case _:
                 invalid_option()
     except:
-        print("Invalid option. Enter a number!")
+        print("Invalid option. Enter a valid number!")
 
 def main_menu():
     shows_subtitles("Fast Food")
