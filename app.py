@@ -1,8 +1,21 @@
+import os
+
 def show_options_of_the_main_menu():
     print("1. Register restaurant")
     print("2. List restaurant")
     print("3. Restaurant status")
     print("4. Exit")
+
+def shows_subtitles(text):
+    os.system("cls")
+    line = "=" * (len(text))
+    print(line)
+    print(text)
+    print(line, "\n")
+
+def return_to_the_main_menu():
+    input("\nPress a key + the ENTER key to return to the main menu: ")
+    main_menu()
 
 def choosen_option():
     try:
