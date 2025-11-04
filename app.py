@@ -42,6 +42,7 @@ def choosen_option():
         print("Invalid option. Enter a number!")
 
 def main_menu():
+    shows_subtitles("Fast Food")
     show_options_of_the_main_menu()
     choosen_option()
 
