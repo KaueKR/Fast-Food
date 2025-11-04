@@ -23,6 +23,15 @@ def invalid_option():
     print("Invalid option. Try again!")
     return_to_the_main_menu
 
+def registers_new_restaurant():
+    shows_subtitles("Registration of new restaurants")
+    restaurant_name = input("What is the name of the restaurant you want to register? ")
+    restaurant_category = input(f"Enter the category of the restaurant {restaurant_name}: ")
+    restaurant_data = {"name": restaurant_name, "category": restaurant_category, "state": False}
+    restaurant_lists.append(restaurant_data)
+    print(f"Restaurant {restaurant_name} successfully registered!")
+    return_to_the_main_menu()
+
 def finish_app():
     shows_subtitles("Program finished with successfully!")
 
@@ -31,7 +40,7 @@ def choosen_option():
         choose_option = int(input("\nChoose an option: "))
         match choose_option:
             case 1:
-                print("Register restaurant!")
+                registers_new_restaurant()
             case 2:
                 print("List the registered restaurants!")
             case 3:
