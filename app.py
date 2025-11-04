@@ -1,5 +1,7 @@
 import os
 
+restaurant_lists = []
+
 def show_options_of_the_main_menu():
     print("1. Register restaurant")
     print("2. List restaurant")
