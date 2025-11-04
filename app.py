@@ -42,6 +42,21 @@ def list_of_registered_restaurants():
         print(f"- {restaurant_name.ljust(16)} | {restaurant_category.ljust(16)} | {restaurant_state}")
     return_to_the_main_menu()
 
+def change_restaurant_state():
+    shows_subtitles("Restaurant state")
+    restaurant_name = input("Enter the name of the restaurant whose state you want to change: ")
+    search_restaurant = False
+    for restaurant in restaurant_lists:
+        if restaurant_name == restaurant["name"]:
+            search_restaurant = True
+            restaurant["state"] = not restaurant["state"]
+            message = f"The restaurant {restaurant_name} active with successfully!" if restaurant["state"] == True else f"The restaurant {restaurant_name} deactivated with successfully!"
+            print(message)
+    if search_restaurant != True:
+        print(f"The restaurant {restaurant_name} wasn't found!")
+    return_to_the_main_menu() 
+
+
 def finish_app():
     shows_subtitles("Program finished with successfully!")
 
@@ -54,7 +69,7 @@ def choosen_option():
             case 2:
                 list_of_registered_restaurants()
             case 3:
-                print("Shows the status of the restaurant!")
+                change_restaurant_state()
             case 4:
                 finish_app()
             case _:
