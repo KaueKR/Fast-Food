@@ -17,6 +17,9 @@ def return_to_the_main_menu():
     input("\nPress a key + the ENTER key to return to the main menu: ")
     main_menu()
 
+def finish_app():
+    shows_subtitles("Program finished with successfully!")
+
 def choosen_option():
     try:
         choose_option = int(input("\nChoose an option: "))
@@ -28,7 +31,7 @@ def choosen_option():
             case 3:
                 print("Shows the status of the restaurant!")
             case 4:
-                print("End the program!")
+                finish_app()
             case _:
                 print("Invalid option!")
     except:
